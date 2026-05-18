@@ -1,0 +1,28 @@
+[project]
+name = "wdsenum"
+version = "1.0.0"
+description = "Enumerates unattend files in Windows Deployment Services"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "GPL-3.0-or-later" }
+authors = [
+    { name = "Maxime AWOUKOU" }
+]
+dependencies = [
+    "impacket>=0.13.0",
+    "rich>=15.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/cogiceo/WDSEnum"
+Repository = "https://github.com/cogiceo/WDSEnum"
+
+[project.scripts]
+wdsenum = "wdsenum:main"
+
+[tool.poetry]
+packages = [{ include = "wdsenum" }]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
