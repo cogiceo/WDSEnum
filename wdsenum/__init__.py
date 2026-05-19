@@ -67,8 +67,8 @@ def main():
     unattend_parser.add_argument("-o", "--output", type=str, help="Output folder to save unattend files", required=True)
 
     ldap_parser = unattend_parser.add_argument_group(title="LDAP flags")
+    ldap_parser.add_argument("--timeout", type=int, default=60, help="LDAP timeout in seconds (default: 60)")
     connection_type = ldap_parser.add_mutually_exclusive_group()
-    connection_type.add_argument("--timeout", type=int, default=60, help="LDAP timeout in seconds (default: 60)")
     connection_type.add_argument("--ldaps", action="store_true", help="Use LDAPS (port 636)")
     connection_type.add_argument("--gc", action="store_true", help="Use the Global Catalog (port 3268)")
     args = parser.parse_args()
